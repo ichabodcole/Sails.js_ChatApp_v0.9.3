@@ -5,7 +5,7 @@ chatApp.ChatView = Backbone.View.extend({
   el: $('#chatContainer'),
 
   events: {
-    'click #postMessageButton': postMessage
+    'click #postMessageButton': 'postMessage'
   },
 
   initialize: function (){
@@ -21,7 +21,9 @@ chatApp.ChatView = Backbone.View.extend({
   postMessage: function (e){
     // get the value of the message field
     var messageText = this.messageField.val();
-    messages.create({ message: messageText }, { wait: true });
+    // the create method adds a new model to the collection
+    // and saves it to the server.
+    chatApp.messages.create({ message: messageText }, { wait: true });
     // set the value of the message field to an empty string.
     this.messageField.val("");
   }

@@ -1,0 +1,47 @@
+<h2>Welcome <%= username %></h2>
+<div id="newMessageForm">
+    <textarea id="message" placeholder="Enter your message here:"></textarea>
+    <button id="postMessageButton">Add Message</button>
+</div>
+<div id="messagesContainer">
+</div>
+<script>
+    var MessageModel = Backbone.Model.extend({
+        urlRoot: '/messages',
+    });
+
+    var MessageCollection = Backbone.Collection.extend({
+        url: '/messages',
+        model: MessageModel,
+    });
+
+    var messages = new MessageCollection();
+    messages.fetch();
+
+    $("#postMessageButton").click(function(){
+        var messageText = $("#message").val();
+        messages.create({message: messageText}, {wait: true});
+        $("#message").val("");
+    });
+
+    _.templateSettings = {
+        interpolate : /\{\{(.+?)\}\}/g
+    };
+
+    var MessagesView = Backbone.View.extend({
+        el: '#messagesContainer',
+        initialize: function () {
+            this.collection.on('add', this.render, this);
+            this.render();
+        },
+        template: _.template("<div><p>{{ message }}</p></div>"),
+            render: function () {
+                this.$el.html("");
+                this.collection.each(function(msg){
+                    this.$el.append(this.template(msg.toJSON()));
+                }, this)
+        }
+    });
+
+    var mView = new MessagesView({collection: messages});
+</script>

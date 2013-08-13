@@ -5,6 +5,12 @@
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <!-- Link to backbone and it's dependencies -->
+    <script type="text/javascript" src="/js/vendor/jquery.js"></script>
+    <script type="text/javascript" src="/js/vendor/underscore.js"></script>
+    <script type="text/javascript" src="/js/vendor/backbone.js"></script>
+
   </head>
 
   <body>
@@ -14,12 +20,11 @@
 
     <!-- Bring in the socket.io client -->
     <script type="text/javascript" src="/js/socket.io.js"></script>
-    
+
     <!-- then beef it up with some convenience logic for talking to Sails.js -->
     <script type="text/javascript" src="/js/sails.io.js"></script>
 
     <!-- listen on socket.io for incoming messages -->
     <script type="text/javascript" src="/js/app.js"></script>
-
     </body>
 </html>

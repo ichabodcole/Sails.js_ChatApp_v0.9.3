@@ -1,0 +1,19 @@
+{
+  "name": "ChatApp",
+  "version": "0.0.0",
+  "main": "app.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "git://github.com/components/jquery.git#~2.0.3",
+    "backbone": "git://github.com/documentcloud/backbone.git#~1.0.0",
+    "requirejs": "git://github.com/jrburke/requirejs.git#~2.1.8",
+    "socket.io": "git://github.com/LearnBoost/socket.io.git#~0.9.15",
+    "underscore": "git://github.com/documentcloud/underscore.git#~1.5.1"
+  }
+}

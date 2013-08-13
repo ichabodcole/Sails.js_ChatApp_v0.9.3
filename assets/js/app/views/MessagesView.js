@@ -11,8 +11,8 @@ chatApp.MessagesView = Backbone.View.extend({
   },
 
   addOne: function(model) {
-    var message = new chatApp.MessageView(model);
-    this.append(message.render().el);
+    var message = new chatApp.MessageView({model: model});
+    this.$el.append(message.render().el);
   },
 
   addAll: function() {

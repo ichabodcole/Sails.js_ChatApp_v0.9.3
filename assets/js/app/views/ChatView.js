@@ -1,6 +1,6 @@
 var chatApp = window.chatApp || {};
 
-chatApp.ChapView = Backbone.View.extend({
+chatApp.ChatView = Backbone.View.extend({
 
   el: $('#chatContainer'),
 
@@ -11,7 +11,7 @@ chatApp.ChapView = Backbone.View.extend({
   initialize: function (){
     // create the messages list sub view and
     // pass it the messages collection
-    this.messageList = new chatApp.MessagesView(chatApp.messages);
+    this.messageList = new chatApp.MessagesView({collection:chatApp.messages});
     // save a reference to the message form field
     this.messageField = this.$("#message");
     // call fetch on the messages collection

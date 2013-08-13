@@ -18,9 +18,12 @@
     <!-- then beef it up with some convenience logic for talking to Sails.js -->
     <script type="text/javascript" src="/js/sails.io.js"></script>
 
+    <!--
+      We don't want to actually load this file since the 'connect' callback would
+      block the second 'connect' callback in our SailsCollection sync method.
+    -->
     <!-- listen on socket.io for incoming messages -->
-    <script type="text/javascript" src="/js/app.js"></script>
-
+    <!-- <script type="text/javascript" src="/js/app.js"></script> -->
   </head>
 
   <body>

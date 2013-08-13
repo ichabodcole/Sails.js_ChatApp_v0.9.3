@@ -7,7 +7,7 @@ _.templateSettings = {
 chatApp.MessageView = Backbone.View.extend({
   tagName: 'div',
   className: 'message',
-  template: _.template($('messageTemplate').html()),
+  template: _.template($('#messageTemplate').html()),
 
   initialize: function(options) {
   },

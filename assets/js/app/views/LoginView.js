@@ -1,5 +1,7 @@
 var chatApp = window.chatApp || {};
 
+// LoginView extends AuthBaseView which contains methods for
+// posting and error handling.
 chatApp.LoginView = chatApp.AuthBaseView.extend({
   el: $('#login'),
 
@@ -8,10 +10,14 @@ chatApp.LoginView = chatApp.AuthBaseView.extend({
   },
 
   initialize: function() {
+    this.path = '/login';
+    this.resetData();
+  },
+
+  resetData: function() {
     this.data = null;
     this.username = null;
     this.password = null;
-    this.path = '/login';
   },
 
   setValues: function(){

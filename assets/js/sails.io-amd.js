@@ -16,8 +16,10 @@
  * For more information, visit:
  * http://sailsjs.org/#documentation
  */
-(function (io) {
 
+// We bring in the socket.io-client library from the bower_components
+// and send it through as io.
+define(['socket.io-client'], function(io) {
 
   // We'll be adding methods to `io.SocketNamespace.prototype`, the prototype for the
   // Socket instance returned when the browser connects with `io.connect()`
@@ -147,17 +149,14 @@
       if (parsedResult === 500) throw new Error("500: Server error");
 
       cb && cb(parsedResult);
-
     });
   }
 
+  // Returning Socket is not necessary since we will access it through
+  // the Socketnamespace, but let's do it for AMD consistency.
+  return Socket;
+});
 
 
 
-}) (
 
-  // In case you're wrapping socket.io to prevent pollution of the global namespace,
-  // you can replace `window.io` with your own `io` here:
-  window.io
-
-);

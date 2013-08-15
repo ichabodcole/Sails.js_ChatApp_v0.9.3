@@ -13,8 +13,11 @@
     <button id="signupButton">Signup</button>
 </div>
 
+<!-- Use requirejs to load require conifig file and the necessary modules -->
 <script type="text/javascript">
-  require(['js/require_config'], function(config) {
-    require(['index']);
+  require(['js/require_config'], function() {
+    // Requiring sails.io-amd will also bring in socket.io
+    // and add some convenience logic to it.
+    require(['sails.io-amd', 'index']);
   });
 </script>

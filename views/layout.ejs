@@ -6,27 +6,13 @@
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-
+    <!-- Load in the requirejs library -->
     <script type="text/javascript" src="/bower_components/requirejs/require.js"></script>
-
-    <!-- A few key dependencies, linked in order -->
-    <!-- Bring in the socket.io client -->
-    <script type="text/javascript" src="/js/socket.io.js"></script>
-
-    <!-- then beef it up with some convenience logic for talking to Sails.js -->
-    <script type="text/javascript" src="/js/sails.io.js"></script>
-
-    <!--
-      We don't want to actually load this file since the 'connect' callback would
-      block the second 'connect' callback in our SailsCollection sync method.
-    -->
-    <!-- listen on socket.io for incoming messages -->
-    <!-- <script type="text/javascript" src="/js/app.js"></script> -->
   </head>
 
   <body>
 
     <%- body %>
 
-    </body>
+  </body>
 </html>

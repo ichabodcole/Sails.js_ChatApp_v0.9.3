@@ -19,16 +19,20 @@ define(['backbone'], function(Backbone) {
           this.socket.on("message", _.bind(function(msg){
             // var m = msg.uri.split("/").pop();
             // In v0.9.0 the REST method is now stored in the messages verb property
-            var m = msg.verb;
-            if (m === "create") {
-              this.add(msg.data);
-            } else if (m === "update") {
-              // this.get(msg.data.id).set(msg.data);
-              // In v0.9.0 the message id property is no longer stored in the data object.
-              this.get(msg.id).set(msg.data);
-            } else if (m === "destroy") {
-              // this.remove(this.get(msg.data.id));
-              this.remove(this.get(msg.id));
+            var method = msg.verb;
+            switch(method) {
+              case "create":
+                this.add(msg.data);
+                break;
+              case "update":
+                // this.get(msg.data.id).set(msg.data);
+                // In v0.9.0 the message id property is no longer stored in the data object.
+                this.get(msg.id).set(msg.data);
+                break;
+              case "destroy":
+                // this.remove(this.get(msg.data.id));
+                this.remove(this.get(msg.id));
+                break;
             }
           }, this));
         }, this));

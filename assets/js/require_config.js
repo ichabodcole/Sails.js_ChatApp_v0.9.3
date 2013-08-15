@@ -1,10 +1,12 @@
+// path to bower directory.
+var bowerPath = '../../bower_components/';
+
 // This is a utility function for returning the full path
 // to a bower component. It assumes the component folder
 // and file name are the same.
-function bowerPath(componentName) {
-  var basePath = '../../bower_components/';
+function bowerComponentPath(componentName) {
   var componentPath = componentName + '/' + componentName;
-  return basePath + componentPath;
+  return bowerPath + componentPath;
 }
 
 requirejs.config({
@@ -12,9 +14,11 @@ requirejs.config({
 
   paths: {
     js: '../',
-    underscore: bowerPath('underscore'),
-    jquery: bowerPath('jquery'),
-    backbone: bowerPath('backbone')
+    underscore: bowerComponentPath('underscore'),
+    jquery: bowerComponentPath('jquery'),
+    backbone: bowerComponentPath('backbone'),
+    'socket.io-client': bowerPath + 'socket.io-client/dist/socket.io',
+    'sails.io-amd': '../sails.io-amd'
   },
 
   shim: {
@@ -29,6 +33,10 @@ requirejs.config({
 
     'jquery': {
       exports: '$'
+    },
+
+    'socket.io-client': {
+      exports: 'io'
     }
   }
 });

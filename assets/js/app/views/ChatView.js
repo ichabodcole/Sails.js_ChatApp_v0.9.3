@@ -21,9 +21,14 @@ chatApp.ChatView = Backbone.View.extend({
   postMessage: function (e){
     // get the value of the message field
     var messageText = this.messageField.val();
-    // the create method adds a new model to the collection
-    // and saves it to the server.
-    chatApp.messages.create({ message: messageText }, { wait: true });
+    // Make sure the message value isn't empty.
+    if (messageText) {
+      // the create method adds a new model to the collection
+      // and saves it to the server.
+      chatApp.messages.create({ message: messageText }, { wait: true });
+    } else {
+      alert("Please enter some text.");
+    }
     // set the value of the message field to an empty string.
     this.messageField.val("");
   }

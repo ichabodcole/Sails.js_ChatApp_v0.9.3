@@ -12,10 +12,8 @@
 </div>
 
 <!-- Load all of the necessary ChatApp backbone modules -->
-<script type="text/javascript" src="/js/app/collections/SailsCollection.js"></script>
-<script type="text/javascript" src="/js/app/models/Message.js"></script>
-<script type="text/javascript" src="/js/app/collections/Messages.js"></script>
-<script type="text/javascript" src="/js/app/views/MessageView.js"></script>
-<script type="text/javascript" src="/js/app/views/MessagesView.js"></script>
-<script type="text/javascript" src="/js/app/views/ChatView.js"></script>
-<script type="text/javascript" src="/js/app/chat.js"></script>
+<script type="text/javascript">
+  require(['js/require_config'], function(config) {
+    require(['chat']);
+  });
+</script>

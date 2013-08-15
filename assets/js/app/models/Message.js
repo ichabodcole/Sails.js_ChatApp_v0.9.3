@@ -1,5 +1,7 @@
-var chatApp = window.chatApp || {};
+define(['backbone'], function(Backbone) {
+  var Message = Backbone.Model.extend({
+    urlRoot: '/messages'
+  });
 
-chatApp.Message = Backbone.Model.extend({
-    urlRoot: '/messages',
+  return Message;
 });

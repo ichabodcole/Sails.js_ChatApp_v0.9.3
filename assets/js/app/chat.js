@@ -1,8 +1,8 @@
-var chatApp = window.chatApp || {};
+require(['underscore',
+         'collections/Messages',
+         'views/ChatView'], function(_, Messages, ChatView) {
 
-$(function () {
-  // instantiate the messages collection and
-  // add it to the chatApp namespace.
-  chatApp.messages = new chatApp.Messages();
-  new chatApp.ChatView();
+  // instantiate the messages collection.
+  messages = new Messages();
+  new ChatView({messages: messages});
 });

@@ -1,6 +1,10 @@
-var chatApp = window.chatApp || {};
+define(['collections/SailsCollection',
+        'models/Message'], function(SailsCollection, Message) {
 
-chatApp.Messages = chatApp.SailsCollection.extend({
-  sailsCollection: 'messages',
-  model: chatApp.Message,
+  var Messages = SailsCollection.extend({
+    sailsCollection: 'messages',
+    model: Message,
+  });
+
+  return Messages;
 });

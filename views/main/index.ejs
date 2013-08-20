@@ -1,19 +1,16 @@
 <h1>Code Chat</h1>
-<div id="login">
+<div id="login" ng-controller="LoginController">
     <h3>Login</h3>
-    <input type="text" id="loginName" placeholder="name" />
-    <input type="password" id="loginPassword" placeholder="password" />
+    <input ng-model="loginName" type="text" id="loginName" placeholder="name" />
+    <input ng-model="loginPassword" type="password" id="loginPassword" placeholder="password" />
     <button id="loginButton">Login</button>
 </div>
-<div id="signup">
+<div id="signup" ng-controller="SignupController">
     <h3>Signup</h3>
-    <input type="text" id="signupName" placeholder="name" />
-    <input type="password" id="signupPassword" placeholder="password" />
-    <input type="password" id="signupConfirmPassword" placeholder="confirm password" />
+    <input ng-model="signupName" type="text" id="signupName" placeholder="name" />
+    <input ng-model="signupPassword" type="password" id="signupPassword" placeholder="password" />
+    <input ng-model="signupConfirmPassword" type="password" id="signupConfirmPassword" placeholder="confirm password" />
     <button id="signupButton">Signup</button>
 </div>
 
-<script type="text/javascript" src="/js/app/views/AuthBaseView.js"></script>
-<script type="text/javascript" src="/js/app/views/LoginView.js"></script>
-<script type="text/javascript" src="/js/app/views/SignupView.js"></script>
 <script type="text/javascript" src="/js/app/index.js"></script>

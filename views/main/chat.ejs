@@ -1,13 +1,13 @@
 <h2>Welcome <%= username %></h2>
-<div id="chatContainer">
+<div id="chatContainer" ng-controller="MessageController">
   <div id="newMessageForm">
-    <textarea id="message" placeholder="Enter your message here:"></textarea>
-    <button id="postMessageButton">Add Message</button>
+    <textarea ng-model="message" id="message" placeholder="Enter your message here:"></textarea>
+    <button ng-click="buttonClick()" id="postMessageButton">Add Message</button>
   </div>
   <div id="messagesContainer">
-    <script type="text/template" id="messageTemplate">
-      <p><b>{{ username }}: </b>{{ message }}</p>
-    </script>
+    <ul ng-repeat="message in messages">
+      <p><b>{{ message.username }}: </b>{{ message.message }}</p>
+    </ul>
   </div>
 </div>
 

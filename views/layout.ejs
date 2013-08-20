@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="chatApp">
   <head>
     <title><%- title %></title>
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-    <!-- Link to angular -->
-    <script src="text/javascript" src"/js/vendor/angular.js"></script>
+    <!-- Link to angular and dependencies-->
+    <script type="text/javascript" src="/js/vendor/angular.js"></script>
+    <script type="text/javascript" src="/js/app/app.js"></script>
+    <script type="text/javascript" src="/js/app/services.js"></script>
+    <script type="text/javascript" src="/js/app/controllers.js"></script>
     <!-- A few key dependencies, linked in order -->
 
     <!-- Bring in the socket.io client -->

@@ -3,14 +3,12 @@
     <h3>Login</h3>
     <input ng-model="loginName" type="text" id="loginName" placeholder="name" />
     <input ng-model="loginPassword" type="password" id="loginPassword" placeholder="password" />
-    <button id="loginButton">Login</button>
+    <button ng-click="buttonClick()" id="loginButton">Login</button>
 </div>
 <div id="signup" ng-controller="SignupController">
     <h3>Signup</h3>
     <input ng-model="signupName" type="text" id="signupName" placeholder="name" />
     <input ng-model="signupPassword" type="password" id="signupPassword" placeholder="password" />
     <input ng-model="signupConfirmPassword" type="password" id="signupConfirmPassword" placeholder="confirm password" />
-    <button id="signupButton">Signup</button>
+    <button ng-click="buttonClick()" id="signupButton">Signup</button>
 </div>
-
-<script type="text/javascript" src="/js/app/index.js"></script>

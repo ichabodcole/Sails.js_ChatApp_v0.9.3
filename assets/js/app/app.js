@@ -1,1 +1,1 @@
-var chatApp = chatApp || angular.module('chatApp', []);
+var chatApp = chatApp || angular.module('chatApp', ['ngResource']);

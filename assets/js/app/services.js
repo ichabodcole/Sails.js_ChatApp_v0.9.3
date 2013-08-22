@@ -27,7 +27,7 @@ chatApp.factory('errorHandler', function(){
   return factory;
 });
 
-chatApp.service('userService', function($http, $window, errorHandler) {
+chatApp.service('userResource', function($http, $window, errorHandler) {
   this.send = function (path, data){
     $http.post(path, data)
     .success(function(res, status, headers, config) {
@@ -40,7 +40,7 @@ chatApp.service('userService', function($http, $window, errorHandler) {
   };
 });
 
-chatApp.factory('messagesService', function($resource, errorHandler) {
+chatApp.factory('messagesResource', function($resource, errorHandler) {
   var factory = {};
   factory.resource = $resource('/messages');
 

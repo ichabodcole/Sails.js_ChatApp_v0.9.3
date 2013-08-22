@@ -6,11 +6,6 @@ chatApp.factory('errorHandler', function(){
   factory.setError = function(errorMessage) {
     this.errors = this.errors || [];
     this.errors.push(errorMessage);
-
-    // want to see if this is global...
-    this.errorCount = this.errorCount || 0;
-    this.errorCount += 1;
-    console.log(this.errorCount);
   };
 
   factory.showErrors = function() {

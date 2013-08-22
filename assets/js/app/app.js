@@ -1,1 +1,6 @@
-var chatApp = chatApp || angular.module('chatApp', ['ngResource']);
+var chatApp;
+
+(function(){
+  'use strict';
+  chatApp = chatApp || angular.module('chatApp', ['ngResource']);
+}());

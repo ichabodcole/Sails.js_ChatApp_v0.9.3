@@ -6,7 +6,9 @@
   </div>
   <div id="messagesContainer">
     <ul>
-      <li chat-message ng-repeat="message in messages"></li>
+      <li chat-message ng-repeat="message in messages" username="{{message.username}}">
+        {{message.message}}
+      </li>
     </ul>
   </div>
 </div>

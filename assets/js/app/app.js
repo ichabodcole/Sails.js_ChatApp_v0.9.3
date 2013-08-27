@@ -13,7 +13,7 @@ var chatApp;
       templateUrl: '/partials/message_detail.html',
       controller: 'MessageController'
     })
-    .when('/users', {
+    .when('/users/:userId', {
       templateUrl: '/partials/user_detail.html',
       controller: 'UserController'
     });

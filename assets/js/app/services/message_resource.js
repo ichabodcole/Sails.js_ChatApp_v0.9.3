@@ -3,7 +3,9 @@
 
   chatApp.factory('messagesResource', function($resource, errorHandler) {
     var factory = {};
-    factory.resource = $resource('/messages/:messageId');
+    factory.resource = $resource('/messages/:messageId', {}, {
+      getByUserId: {method:'GET', url:'/messages', isArray:true}
+    });
 
     factory.query = function(){
       var query = this.resource.query(
@@ -30,6 +32,18 @@
       );
 
       return get;
+    }
+
+    factory.getByUserId = function (userId) {
+      var userMessages = this.resource.getByUserId({userId:userId},
+        function success (res) {
+        // not implmented
+        },
+        function error (res) {
+         errorHandler.setError("Error: " + res.error);
+        }
+      );
+      return userMessages;
     }
 
     factory.save = function(data) {

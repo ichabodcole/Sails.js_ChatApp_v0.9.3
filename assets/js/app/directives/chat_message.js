@@ -1,13 +1,20 @@
-chatApp.directive('chatMessage', function() {
-  var directiveObj = {
-    restrict: 'A',
-    transclude: true,
-    scope:{
-      username: '@',
-      userId: '@'
-    },
-    templateUrl: 'message.html'
-  };
+(function() {
+  'use strict';
 
-  return directiveObj;
-});
+  chatApp.directive('chatMessage', function() {
+    var directiveObj = {
+      restrict: 'E',
+      replace: true,
+      transclude: true,
+      scope:{
+        username: '@',
+        userId: '@',
+        messageId: '@',
+        destroy: '&'
+      },
+      templateUrl: 'message.html'
+    };
+
+    return directiveObj;
+  });
+}());

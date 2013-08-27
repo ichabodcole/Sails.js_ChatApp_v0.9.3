@@ -1,6 +1,7 @@
 <div id="messageContainer">
     <div class="message">
-    	Message: {{ message.message }}
+    	Message: <i>{{ message.message }}</i><br>
+    	created at: {{message.createdAt | date:'M/d/yy - h:mm a'}}
     </div>
     <a href="#/chat">Back</a>
   </ul>

@@ -32,7 +32,7 @@
       );
 
       return get;
-    }
+    };
 
     factory.getByUserId = function (userId) {
       var userMessages = this.resource.getByUserId({userId:userId},
@@ -44,7 +44,7 @@
         }
       );
       return userMessages;
-    }
+    };
 
     factory.save = function(data) {
       var save = this.resource.save(data,
@@ -57,6 +57,19 @@
       );
 
       return save;
+    };
+
+    factory.destroy = function (messageId) {
+      var destroy = this.resource.delete({messageId:messageId},
+        function success (res) {
+          // not implemented
+        },
+        function error (res) {
+          errorHandler.setError("Error: " + res.error);
+        }
+      );
+
+      return destroy;
     };
 
     return factory;

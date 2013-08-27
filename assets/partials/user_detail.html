@@ -1,7 +1,11 @@
 <div id="messageContainer">
 	Now viewing all messages from: {{username}}
 	<ul>
-		<li ng-repeat="message in messages" class="message">{{ message.message }}</li>
+		<li ng-repeat="message in messages" class="message">
+			<i>{{ message.message }}</i><br>
+			created at {{message.createdAt | date:'M/d/yy - h:mm a'}}
+			<hr>
+		</li>
 	</ul>
 	<a href="#/chat">Back</a>
 </div>

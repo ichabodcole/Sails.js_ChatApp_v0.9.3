@@ -7,13 +7,22 @@
   <div id="messagesContainer">
     <ul>
       <script type="text/ng-template" id="message.html">
-        <p ng-transclude><b><a href='#/users/{{userId}}'>{{ username }}</a></b>:</p>
-        <span>- <a class="delete" href="/#delete">DELETE</a></span>
+        <li>
+          <p ng-transclude><b><a href='#/users/{{ userId }}'>{{ username }}</a></b>:</p>
+          <span>- <a class="delete" ng-click="destroy(messageId)" prevent-default>DELETE</a></span>
+          <hr>
+        </li>
       </script>
 
-      <li class="message" chat-message ng-repeat="message in messages" username="{{message.username}}" user-id="{{message.userId}}">
+      <chat-message
+        class="message"
+        ng-repeat="message in messages"
+        username="{{message.username}}"
+        user-id="{{message.userId}}"
+        message-id="{{message.id}}"
+        destroy="destroy({messageId:message.id})">
         <a href="#/chat/{{message.id}}">{{message.message}}</a>
-      </li>
+      </chat-message>
     </ul>
   </div>
 </div>

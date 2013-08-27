@@ -1,4 +1,4 @@
-(function(){
+(function() {
   'use strict';
 
   chatApp.factory('messagesResource', function($resource, errorHandler) {

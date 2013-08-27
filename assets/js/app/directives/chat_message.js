@@ -3,9 +3,10 @@ chatApp.directive('chatMessage', function() {
     restrict: 'A',
     transclude: true,
     scope:{
-      username: '@'
+      username: '@',
+      userId: '@'
     },
-    template: '<p ng-transclude><b>{{ username }}: </p>'
+    templateUrl: 'message.html'
   };
 
   return directiveObj;

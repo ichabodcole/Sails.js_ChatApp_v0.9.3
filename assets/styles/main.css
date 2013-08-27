@@ -1,0 +1,7 @@
+@import 'bootstrap.css';
+@import 'login.css';
+@import 'chat.css';
+
+#container {
+	padding:20px;
+}

@@ -1,20 +1,12 @@
 <h2>Welcome <%= username %></h2>
-<div id="chatContainer" ng-controller="MessageController">
-  <div id="newMessageForm">
-    <textarea ng-model="message" id="message" placeholder="Enter your message here:"></textarea>
-    <button ng-click="buttonClick()" id="postMessageButton">Add Message</button>
-  </div>
-  <div id="messagesContainer">
-    <ul>
-      <li chat-message ng-repeat="message in messages" username="{{message.username}}">
-        {{message.message}}
-      </li>
-    </ul>
-  </div>
+<div ng-view>
+
 </div>
+
 
 <!-- Load all of the necessary ChatApp modules -->
 <script type="text/javascript" src="/js/app/services/message_validator.js"></script>
 <script type="text/javascript" src="/js/app/services/message_resource.js"></script>
 <script type="text/javascript" src="/js/app/directives/chat_message.js"></script>
+<script type="text/javascript" src="/js/app/controllers/message_list_controller.js"></script>
 <script type="text/javascript" src="/js/app/controllers/message_controller.js"></script>

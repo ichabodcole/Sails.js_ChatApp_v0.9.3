@@ -1,0 +1,31 @@
+#newMessageForm {
+	margin-left: 10px;
+}
+
+#newMessageForm button {
+	margin-top: 10px;
+}
+
+ul {
+	padding: 20px;
+}
+
+li{
+
+}
+
+li p{
+	display: inline;
+}
+
+.message a {
+	color: red;
+}
+
+.message p a {
+	color: green;
+}
+
+.message p b a {
+	color: blue;
+}

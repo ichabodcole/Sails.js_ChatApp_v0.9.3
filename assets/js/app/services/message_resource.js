@@ -1,7 +1,8 @@
-define(['angular', 'app'], function(ng, app){
+define(['angular'], function(){
   'use strict';
+  var module = angular.module('chatApp.services', []);
 
-  app.factory('messagesResource', function($resource, errorHandler) {
+  module.factory('messagesResource', function($resource, errorHandler) {
     var factory = {};
     factory.resource = $resource('/messages/:messageId', {}, {
       getByUserId: {method:'GET', url:'/messages', isArray:true}
@@ -74,5 +75,5 @@ define(['angular', 'app'], function(ng, app){
 
     return factory;
   });
-  return app;
+  return module;
 });

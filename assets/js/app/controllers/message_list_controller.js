@@ -1,7 +1,8 @@
-define(['angular', 'app'], function(ng, app){
+define(['angular'], function(){
   'use strict';
+  var module = angular.module('chatApp.controllers', ['chatApp.services']);
 
-  app.controller('MessageListController', function($scope, messagesResource, messageValidator, errorHandler) {
+  module.controller('MessageListController', function($scope, messagesResource, messageValidator, errorHandler) {
 
     var updateMessages = function updateMessages() {
       $scope.messages = messagesResource.query();
@@ -41,5 +42,5 @@ define(['angular', 'app'], function(ng, app){
     updateMessages();
   });
 
-  return app;
+  return module;
 });

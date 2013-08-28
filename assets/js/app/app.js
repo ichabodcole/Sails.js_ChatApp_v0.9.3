@@ -22,6 +22,6 @@
 //   return chatApp;
 // });
 define(['angular', 'angular-resource'], function(){
-  var app = angular.module('chatApp', ['ngResource']);
+  var app = angular.module('chatApp', ['ngResource', 'chatApp.controllers', 'chatApp.services']);
   return app;
 });

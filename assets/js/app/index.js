@@ -9,5 +9,5 @@ define(['angular',
 				'controllers/signup_controller'], function(){
 
 		'use strict';
-		angular.bootstrap(document, ['chatApp']);
+		return angular.bootstrap(document, ['chatApp']);
 });

@@ -1,7 +1,8 @@
-define(['angular', 'app'], function(ng, app){
-	'use strict';
+define(['angular'], function(){
+  'use strict';
+  var module = angular.module('chatApp.directives', []);
 
-	app.directive('preventDefault', function(){
+	module.directive('preventDefault', function(){
 		return function (scope, element, attrs) {
 			element.bind('click', function(e){
 				e.preventDefault();
@@ -9,5 +10,5 @@ define(['angular', 'app'], function(ng, app){
 		}
 	});
 
-	return app;
+	return module;
 });

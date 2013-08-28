@@ -1,11 +1,12 @@
-define(['angular', 'app'], function(ng, app){
-	'use strict';
+define(['angular'], function(){
+  'use strict';
+  var module = angular.module('chatApp.controllers', ['chatApp.services']);
 
-  app.controller('MessageController', function($scope, $routeParams, messagesResource, errorHandler){
+  module.controller('MessageController', function($scope, $routeParams, messagesResource, errorHandler){
   	var messageId = $routeParams.messageId;
   	$scope.message = messagesResource.get(messageId);
   	errorHandler.showErrors();
   });
 
-  return app;
+  return module;
 });

@@ -1,5 +1,5 @@
 <h1>Code Chat</h1>
-<div id="login" ng-controller="LoginController">
+<div id="login" >
     <h3>Login</h3>
     <input ng-model="loginName" type="text" id="loginName" placeholder="name" />
     <input ng-model="loginPassword" type="password" id="loginPassword" placeholder="password" />
@@ -17,7 +17,8 @@
 <script type="text/javascript">
 
 	require(['js/require_config'], function(){
-		require(['angular','index'], function(){});
+		require(['angular','index'], function(){
+        });
 	});
 
 </script>

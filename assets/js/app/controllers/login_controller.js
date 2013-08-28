@@ -1,7 +1,8 @@
-define(['angular', 'app'], function(ng, app){
- 'use strict';
+define(['angular'], function(angular){
+  'use strict';
+  var module = angular.module('chatApp.controllers', ['chatApp.services']);
 
-  app.controller('LoginController', function($scope, userResource, loginValidator, errorHandler) {
+  module.controller('LoginController', function($scope, userResource, loginValidator, errorHandler) {
 
     $scope.buttonClick = function() {
       var username = $scope.loginName;
@@ -17,5 +18,5 @@ define(['angular', 'app'], function(ng, app){
     };
   });
 
-  return app;
+  return module;
 });

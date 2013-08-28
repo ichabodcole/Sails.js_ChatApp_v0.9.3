@@ -1,7 +1,8 @@
-define(['angular', 'app'], function(ng, app){
+define(['angular'], function(){
   'use strict';
+  var module = angular.module('chatApp.directives', []);
 
-  app.directive('chatMessage', function() {
+  module.directive('chatMessage', function() {
     var directiveObj = {
       restrict: 'E',
       replace: true,
@@ -18,5 +19,5 @@ define(['angular', 'app'], function(ng, app){
     return directiveObj;
   });
 
-  return app;
+  return module;
 });

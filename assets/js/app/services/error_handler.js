@@ -1,7 +1,8 @@
-define(['angular', 'app'], function(ng, app){
+define(['angular'], function(){
   'use strict';
+  var module = angular.module('chatApp.services', []);
 
-  app.factory('errorHandler', function(){
+  module.factory('errorHandler', function(){
     var factory = {};
 
     factory.setError = function(errorMessage) {
@@ -23,5 +24,5 @@ define(['angular', 'app'], function(ng, app){
     return factory;
   });
 
-  return app;
+  return module;
 });

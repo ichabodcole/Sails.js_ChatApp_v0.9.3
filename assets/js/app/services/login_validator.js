@@ -1,7 +1,8 @@
-define(['angular', 'app'], function(ng, app){
+define(['angular'], function(){
   'use strict';
+  var module = angular.module('chatApp.services', []);
 
-  app.service('loginValidator', function(errorHandler) {
+  module.service('loginValidator', function(errorHandler) {
     this.isValid = function (username, password) {
       if (username && password) {
           return true;
@@ -12,5 +13,5 @@ define(['angular', 'app'], function(ng, app){
     };
   });
 
-  return app;
+  return module;
 });

@@ -15,7 +15,7 @@ requirejs.config({
   paths: {
     js: '../',
     angular: bowerPath + 'angular-all-unstable/angular',
-    'angular-resource': bowerPath + 'angular-all-unstable/angular-resource'
+    'angular-resource': bowerPath + 'angular-all-unstable/angular-resource',
     // 'socket.io-client': bowerPath + 'socket.io-client/dist/socket.io',
     // 'sails.io-amd': '../sails.io-amd'
   },

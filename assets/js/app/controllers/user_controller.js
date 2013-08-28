@@ -1,7 +1,8 @@
-define(['angular', 'app'], function(ng, app){
-	'use strict';
+define(['angular'], function(){
+  'use strict';
+  var module = angular.module('chatApp.controllers', ['chatApp.services']);
 
-  app.controller('UserController', function($scope, $routeParams, messagesResource){
+  module.controller('UserController', function($scope, $routeParams, messagesResource){
 
   	var userId = $routeParams.userId;
   	var userMessages = messagesResource.getByUserId(userId);
@@ -11,5 +12,5 @@ define(['angular', 'app'], function(ng, app){
   	});
   });
 
-  return app;
+  return  module;
 });

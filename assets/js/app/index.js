@@ -9,8 +9,5 @@ define(['angular',
 				'controllers/signup_controller'], function(){
 
 		'use strict';
-		var t = setTimeout(function(){
-
-			angular.bootstrap(document, ['chatApp']);
-		}, 1000);
+		angular.bootstrap(document, ['chatApp']);
 });

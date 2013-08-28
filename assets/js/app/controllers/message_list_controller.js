@@ -1,7 +1,7 @@
-(function() {
+define(['angular', 'app'], function(ng, app){
   'use strict';
 
-  chatApp.controller('MessageListController', function($scope, messagesResource, messageValidator, errorHandler) {
+  app.controller('MessageListController', function($scope, messagesResource, messageValidator, errorHandler) {
 
     var updateMessages = function updateMessages() {
       $scope.messages = messagesResource.query();
@@ -40,4 +40,6 @@
     // Load in the messages
     updateMessages();
   });
-}());
+
+  return app;
+});

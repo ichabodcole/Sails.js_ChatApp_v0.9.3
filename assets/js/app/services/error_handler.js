@@ -1,7 +1,7 @@
-(function(){
+define(['angular', 'app'], function(ng, app){
   'use strict';
 
-  chatApp.factory('errorHandler', function(){
+  app.factory('errorHandler', function(){
     var factory = {};
 
     factory.setError = function(errorMessage) {
@@ -22,4 +22,6 @@
 
     return factory;
   });
-}());
+
+  return app;
+});

@@ -1,9 +1,11 @@
-(function(){
-  'use strict';
+define(['angular', 'app'], function(ng, app){
+	'use strict';
 
-  chatApp.controller('MessageController', function($scope, $routeParams, messagesResource, errorHandler){
+  app.controller('MessageController', function($scope, $routeParams, messagesResource, errorHandler){
   	var messageId = $routeParams.messageId;
   	$scope.message = messagesResource.get(messageId);
   	errorHandler.showErrors();
   });
-}());
+
+  return app;
+});

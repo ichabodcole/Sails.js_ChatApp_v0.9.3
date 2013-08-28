@@ -1,7 +1,7 @@
-(function() {
+define(['angular', 'app'], function(ng, app){
   'use strict';
 
-  chatApp.factory('messagesResource', function($resource, errorHandler) {
+  app.factory('messagesResource', function($resource, errorHandler) {
     var factory = {};
     factory.resource = $resource('/messages/:messageId', {}, {
       getByUserId: {method:'GET', url:'/messages', isArray:true}
@@ -74,4 +74,5 @@
 
     return factory;
   });
-}());
+  return app;
+});

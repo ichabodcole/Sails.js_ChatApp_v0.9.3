@@ -1,7 +1,7 @@
-(function(){
-  'use strict';
+define(['angular', 'app'], function(ng, app){
+ 'use strict';
 
-  chatApp.controller('LoginController', function($scope, userResource, loginValidator, errorHandler) {
+  app.controller('LoginController', function($scope, userResource, loginValidator, errorHandler) {
 
     $scope.buttonClick = function() {
       var username = $scope.loginName;
@@ -16,4 +16,6 @@
       errorHandler.showErrors();
     };
   });
-}());
+
+  return app;
+});

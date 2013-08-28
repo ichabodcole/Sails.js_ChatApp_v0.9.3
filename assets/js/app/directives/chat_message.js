@@ -1,7 +1,7 @@
-(function() {
+define(['angular', 'app'], function(ng, app){
   'use strict';
 
-  chatApp.directive('chatMessage', function() {
+  app.directive('chatMessage', function() {
     var directiveObj = {
       restrict: 'E',
       replace: true,
@@ -17,4 +17,6 @@
 
     return directiveObj;
   });
-}());
+
+  return app;
+});

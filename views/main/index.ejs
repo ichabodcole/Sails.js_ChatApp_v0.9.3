@@ -14,9 +14,10 @@
 </div>
 
 <!-- Load all of the necessary ChatApp modules -->
-<script type="text/javascript" src="/js/app/services/login_validator.js"></script>
-<script type="text/javascript" src="/js/app/services/signup_validator.js"></script>
-<script type="text/javascript" src="/js/app/services/user_resource.js"></script>
-<script type="text/javascript" src="/js/app/controllers/login_controller.js"></script>
-<script type="text/javascript" src="/js/app/controllers/signup_controller.js"></script>
-<script type="text/javascript" src="/js/app/directives/common.js"></script>
+<script type="text/javascript">
+
+	require(['js/require_config'], function(){
+		require(['angular','index'], function(){});
+	});
+
+</script>

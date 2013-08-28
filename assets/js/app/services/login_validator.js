@@ -1,7 +1,7 @@
-(function(){
+define(['angular', 'app'], function(ng, app){
   'use strict';
 
-  chatApp.service('loginValidator', function(errorHandler) {
+  app.service('loginValidator', function(errorHandler) {
     this.isValid = function (username, password) {
       if (username && password) {
           return true;
@@ -11,4 +11,6 @@
       return false;
     };
   });
-}());
+
+  return app;
+});

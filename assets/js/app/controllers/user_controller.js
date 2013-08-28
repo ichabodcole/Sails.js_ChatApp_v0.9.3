@@ -1,7 +1,7 @@
-(function(){
-  'use strict';
+define(['angular', 'app'], function(ng, app){
+	'use strict';
 
-  chatApp.controller('UserController', function($scope, $routeParams, messagesResource){
+  app.controller('UserController', function($scope, $routeParams, messagesResource){
 
   	var userId = $routeParams.userId;
   	var userMessages = messagesResource.getByUserId(userId);
@@ -10,4 +10,6 @@
   		$scope.username = res.data[0].username;
   	});
   });
-}());
+
+  return app;
+});

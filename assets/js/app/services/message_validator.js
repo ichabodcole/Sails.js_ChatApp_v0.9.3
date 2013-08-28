@@ -1,7 +1,7 @@
-(function(){
+define(['angular', 'app'], function(ng, app){
   'use strict';
 
-  chatApp.service('messageValidator', function(errorHandler) {
+  app.service('messageValidator', function(errorHandler) {
     this.isValid = function (message) {
       if (message){
         return true;
@@ -10,4 +10,6 @@
       }
     };
   });
-}());
+
+  return app;
+});

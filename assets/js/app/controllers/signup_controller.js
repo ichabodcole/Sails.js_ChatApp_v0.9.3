@@ -1,7 +1,7 @@
-(function(){
+define(['angular', 'app'], function(ng, app){
   'use strict';
 
-  chatApp.controller('SignupController', function($scope, userResource, signupValidator, errorHandler) {
+  app.controller('SignupController', function($scope, userResource, signupValidator, errorHandler) {
 
     $scope.buttonClick = function() {
       var username = $scope.signupName;
@@ -17,5 +17,7 @@
       errorHandler.showErrors();
     };
   });
-}());
+
+  return app;
+});
 

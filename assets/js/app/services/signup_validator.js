@@ -1,7 +1,7 @@
-(function(){
+define(['angular', 'app'], function(ng, app){
   'use strict';
 
-  chatApp.service('signupValidator', function(errorHandler){
+  app.service('signupValidator', function(errorHandler){
     this.isValid = function (username, password, confirmPassword) {
       if (username && password) {
         if (password === confirmPassword) {
@@ -15,4 +15,6 @@
       return false;
     };
   });
-}());
+
+  return app;
+});

@@ -1,6 +1,6 @@
 define(['angular'], function(){
   'use strict';
-  var module = angular.module('chatApp.services', []);
+  var module = angular.module('chatApp.services');
 
   module.service('messageValidator', function(errorHandler) {
     this.isValid = function (message) {

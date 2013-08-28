@@ -1,16 +1,12 @@
-define(['angular'], function(){
+define(['angular'], function(angular){
   'use strict';
-  var module = angular.module('chatApp.controllers', ['chatApp.services']);
+  var module = angular.module('chatApp.controllers');
 
   module.controller('MessageListController', function($scope, messagesResource, messageValidator, errorHandler) {
 
     var updateMessages = function updateMessages() {
       $scope.messages = messagesResource.query();
     };
-
-    $scope.test = function () {
-      console.log("test");
-    }
 
     $scope.destroy = function (obj) {
       var messageId = obj.messageId;
@@ -21,7 +17,7 @@ define(['angular'], function(){
       });
 
       errorHandler.showErrors();
-    }
+    };
 
     $scope.buttonClick = function (){
       var message = $scope.message;
@@ -30,7 +26,7 @@ define(['angular'], function(){
         var data = { message: message };
         var save = messagesResource.save(data);
         save.$then(function success(){
-          $scope.message = "";
+          $scope.message = '';
           updateMessages();
         });
       }

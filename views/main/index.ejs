@@ -1,24 +1,29 @@
 <h1>Code Chat</h1>
-<div id="login" >
-    <h3>Login</h3>
-    <input ng-model="loginName" type="text" id="loginName" placeholder="name" />
-    <input ng-model="loginPassword" type="password" id="loginPassword" placeholder="password" />
-    <button ng-click="buttonClick()" id="loginButton">Login</button>
+<div id="login" ng-controller="LoginController">
+  <h3>Login</h3>
+  <input ng-model="loginName" type="text" id="loginName" placeholder="name" />
+  <input ng-model="loginPassword" type="password" id="loginPassword" placeholder="password" />
+  <button ng-click="buttonClick()" id="loginButton">Login</button>
 </div>
 <div id="signup" ng-controller="SignupController">
-    <h3>Signup</h3>
-    <input ng-model="signupName" type="text" id="signupName" placeholder="name" />
-    <input ng-model="signupPassword" type="password" id="signupPassword" placeholder="password" />
-    <input ng-model="signupConfirmPassword" type="password" id="signupConfirmPassword" placeholder="confirm password" />
-    <button ng-click="buttonClick()" id="signupButton">Signup</button>
+  <h3>Signup</h3>
+  <input ng-model="signupName" type="text" id="signupName" placeholder="name" />
+  <input ng-model="signupPassword" type="password" id="signupPassword" placeholder="password" />
+  <input ng-model="signupConfirmPassword" type="password" id="signupConfirmPassword" placeholder="confirm password" />
+  <button ng-click="buttonClick()" id="signupButton">Signup</button>
 </div>
 
 <!-- Load all of the necessary ChatApp modules -->
 <script type="text/javascript">
 
 	require(['js/require_config'], function(){
-		require(['angular','index'], function(){
+      // We must require app and do the initial module namespace setup before
+      // loading the other modules which depend on these namespaces to exist.
+      require(['app'], function(){
+        require(['index'], function(){
+          angular.bootstrap(document, ['chatApp']);
         });
-	});
+      });
+    });
 
 </script>

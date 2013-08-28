@@ -1,6 +1,6 @@
-define(['angular'], function(){
+define(['angular'], function(angular){
   'use strict';
-  var module = angular.module('chatApp.controllers', ['chatApp.services']);
+  var module = angular.module('chatApp.controllers');
 
   module.controller('SignupController', function($scope, errorHandler, signupValidator, userResource) {
 

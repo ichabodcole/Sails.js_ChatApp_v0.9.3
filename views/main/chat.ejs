@@ -5,3 +5,16 @@
 
 
 <!-- Load all of the necessary ChatApp modules -->
+<script type="text/javascript">
+
+  require(['js/require_config'], function(){
+    // We must require app and do the initial module namespace setup before
+    // loading the other modules which depend on these namespaces to exist.
+    require(['app'], function(){
+      require(['chat'], function(){
+        angular.bootstrap(document, ['chatApp']);
+      });
+    });
+  });
+
+</script>

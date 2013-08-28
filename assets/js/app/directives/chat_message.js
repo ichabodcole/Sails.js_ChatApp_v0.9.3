@@ -1,6 +1,6 @@
-define(['angular'], function(){
+define(['angular'], function(angular){
   'use strict';
-  var module = angular.module('chatApp.directives', []);
+  var module = angular.module('chatApp.directives');
 
   module.directive('chatMessage', function() {
     var directiveObj = {
@@ -13,7 +13,12 @@ define(['angular'], function(){
         messageId: '@',
         destroy: '&'
       },
-      templateUrl: 'message.html'
+      templateUrl: 'message.html',
+      link: function(scope, element, attrs) {
+        element.bind('click', function(e){
+          console.log('clicked');
+        });
+      }
     };
 
     return directiveObj;

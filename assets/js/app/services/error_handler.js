@@ -1,6 +1,6 @@
 define(['angular'], function(){
   'use strict';
-  var module = angular.module('chatApp.services', []);
+  var module = angular.module('chatApp.services');
 
   module.factory('errorHandler', function(){
     var factory = {};

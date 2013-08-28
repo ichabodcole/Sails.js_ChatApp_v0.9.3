@@ -1,6 +1,6 @@
 define(['angular'], function(){
   'use strict';
-  var module = angular.module('chatApp.services', []);
+  var module = angular.module('chatApp.services');
 
   module.service('userResource', function($http, $window) {
     this.send = function (path, data){

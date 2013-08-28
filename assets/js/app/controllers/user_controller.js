@@ -1,6 +1,6 @@
 define(['angular'], function(){
   'use strict';
-  var module = angular.module('chatApp.controllers', ['chatApp.services']);
+  var module = angular.module('chatApp.controllers');
 
   module.controller('UserController', function($scope, $routeParams, messagesResource){
 

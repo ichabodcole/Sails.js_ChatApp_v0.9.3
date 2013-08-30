@@ -5,3 +5,12 @@
 
 
 <!-- Load all of the necessary ChatApp modules -->
+<script type="text/javascript">
+
+	require(['js/require_config'], function(){
+		require(['chat'], function(){
+			angular.bootstrap(document, ['chatApp']);
+		});
+	});
+
+</script>

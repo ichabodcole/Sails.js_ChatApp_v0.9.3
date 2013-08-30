@@ -17,7 +17,9 @@
 <script type="text/javascript">
 
 	require(['js/require_config'], function(){
-		require(['angular','index'], function(){});
+		require(['index'], function(){
+            angular.bootstrap(document, ['chatApp']);
+        });
 	});
 
 </script>

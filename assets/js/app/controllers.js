@@ -34,7 +34,7 @@
     };
   });
 
-  chatApp.controller('MessageController', function($scope, messagesResource, messageValidator, errorHandler) {
+  chatApp.controller('MessageController', function($scope, socket, socketHttp, messagesResource, messageValidator, errorHandler) {
 
     var updateMessages = function updateMessages() {
       $scope.messages = messagesResource.query();
@@ -48,14 +48,19 @@
         var save = messagesResource.save(data);
         save.$then(function success(){
           $scope.message = "";
-          updateMessages();
         });
       }
 
       errorHandler.showErrors();
     };
 
+    socket.on('message', function(msg) {
+      updateMessages();
+    });
+
     // Load in the messages
-    updateMessages();
+    socketHttp.get('/messages', function(res){
+      $scope.messages = res;
+    })
   });
 }());

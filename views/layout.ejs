@@ -6,26 +6,29 @@
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-    <!-- Link to angular and dependencies-->
-    <script type="text/javascript" src="/js/vendor/angular.js"></script>
-    <script type="text/javascript" src="/js/vendor/angular-resource.js"></script>
-    <script type="text/javascript" src="/js/app/app.js"></script>
-    <script type="text/javascript" src="/js/app/services.js"></script>
-    <script type="text/javascript" src="/js/app/controllers.js"></script>
     <!-- A few key dependencies, linked in order -->
 
     <!-- Bring in the socket.io client -->
     <script type="text/javascript" src="/js/socket.io.js"></script>
 
-    <!-- then beef it up with some convenience logic for talking to Sails.js -->
-    <script type="text/javascript" src="/js/sails.io.js"></script>
-
+    <!-- then beef it up with some convenience logic for talking to Sails.js
+      This is now wrapped in an Angular service called socketHttp
+      <script type="text/javascript" src="/js/sails.io.js"></script>
+    -->
     <!--
       We don't want to actually load this file since the 'connect' callback would
       block the second 'connect' callback in our SailsCollection sync method.
     -->
     <!-- listen on socket.io for incoming messages -->
     <!-- <script type="text/javascript" src="/js/app.js"></script> -->
+
+    <!-- Link to angular and dependencies-->
+    <script type="text/javascript" src="/js/vendor/angular.js"></script>
+    <script type="text/javascript" src="/js/vendor/angular-resource.js"></script>
+    <script type="text/javascript" src="/js/app/app.js"></script>
+    <script type="text/javascript" src="/js/app/services.js"></script>
+    <script type="text/javascript" src="/js/app/controllers.js"></script>
+
   </head>
 
   <body>

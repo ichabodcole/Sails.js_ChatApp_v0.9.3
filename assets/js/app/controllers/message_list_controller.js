@@ -2,7 +2,7 @@ define(['angular'], function(angular){
   'use strict';
   var module = angular.module('chatApp.controllers');
 
-  module.controller('MessageListController', function($scope, messagesResource, messageValidator, errorHandler) {
+  module.controller('MessageListController', function($scope, socket, socketHttp, messagesResource, messageValidator, errorHandler) {
 
     var updateMessages = function updateMessages() {
       $scope.messages = messagesResource.query();
@@ -11,10 +11,6 @@ define(['angular'], function(angular){
     $scope.destroy = function (obj) {
       var messageId = obj.messageId;
       var destroy = messagesResource.destroy(messageId);
-
-      destroy.$then(function success(res) {
-        updateMessages();
-      });
 
       errorHandler.showErrors();
     };
@@ -27,15 +23,21 @@ define(['angular'], function(angular){
         var save = messagesResource.save(data);
         save.$then(function success(){
           $scope.message = '';
-          updateMessages();
         });
       }
 
       errorHandler.showErrors();
     };
 
+    // listen for updates from the server.
+    socket.on('message', function(res){
+      updateMessages();
+    });
+
     // Load in the messages
-    updateMessages();
+    socketHttp.get('/messages', function(res){
+      $scope.messages = res;
+    });
   });
 
   return module;

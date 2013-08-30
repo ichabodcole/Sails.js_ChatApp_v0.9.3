@@ -13,12 +13,7 @@ define(['angular'], function(angular){
         messageId: '@',
         destroy: '&'
       },
-      templateUrl: 'message.html',
-      link: function(scope, element, attrs) {
-        element.bind('click', function(e){
-          console.log('clicked');
-        });
-      }
+      templateUrl: 'message.html'
     };
 
     return directiveObj;

@@ -1,4 +1,4 @@
-define(['angular', 'app'], function(ng, app){
+define(['app'], function(app){
   'use strict';
 	// Code adapted from Sailsjs assets/js/sails.io.js file for Angular usage.
 

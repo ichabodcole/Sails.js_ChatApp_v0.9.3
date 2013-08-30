@@ -1,4 +1,4 @@
-define(['angular', 'app'], function(ng, app){
+define(['app'], function(app){
   'use strict';
 
   app.controller('SignupController', function($scope, userResource, signupValidator, errorHandler) {

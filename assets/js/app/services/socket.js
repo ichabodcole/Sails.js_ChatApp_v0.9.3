@@ -1,4 +1,4 @@
-define(['angular', 'app', 'io'], function(ng, app, io){
+define(['app', 'io'], function(app, io){
   'use strict';
 
 	// Code taken from example at http://briantford.com/blog/angular-socket-io.html

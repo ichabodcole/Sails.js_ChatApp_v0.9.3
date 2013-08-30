@@ -1,4 +1,4 @@
-define(['angular', 'app'], function(ng, app){
+define(['angular', 'app'], function(angular, app){
   'use strict';
 
   app.factory('errorHandler', function(){

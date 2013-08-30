@@ -1,7 +1,7 @@
 define(['angular', 'app'], function(ng, app){
   'use strict';
 
-  app.controller('MessageListController', function($scope, messagesResource, messageValidator, errorHandler) {
+  app.controller('MessageListController', function($scope, socket, socketHttp, messagesResource, messageValidator, errorHandler) {
 
     var updateMessages = function updateMessages() {
       $scope.messages = messagesResource.query();
@@ -15,10 +15,6 @@ define(['angular', 'app'], function(ng, app){
       var messageId = obj.messageId;
       var destroy = messagesResource.destroy(messageId);
 
-      destroy.$then(function success(res) {
-        updateMessages();
-      });
-
       errorHandler.showErrors();
     }
 
@@ -30,15 +26,20 @@ define(['angular', 'app'], function(ng, app){
         var save = messagesResource.save(data);
         save.$then(function success(){
           $scope.message = "";
-          updateMessages();
         });
       }
 
       errorHandler.showErrors();
     };
 
+    socket.on('message', function(res){
+      updateMessages();
+    });
+
     // Load in the messages
-    updateMessages();
+    socketHttp.get('/messages', function(res){
+      $scope.messages = res;
+    });
   });
 
   return app;

@@ -16,7 +16,7 @@ requirejs.config({
     js: '../',
     angular: bowerPath + 'angular-all-unstable/angular',
     'angular-resource': bowerPath + 'angular-all-unstable/angular-resource',
-    'io': bowerPath + 'socket.io-client/dist/socket.io.js'
+    'io': bowerPath + 'socket.io-client/dist/socket.io'
   },
 
   shim: {

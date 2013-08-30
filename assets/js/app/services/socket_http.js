@@ -1,6 +1,6 @@
 (function(){
 	'use strict';
-	// Code adapted from Sailsjs sails.io.js file for Angular usage.
+	// Code adapted from Sailsjs assets/js/sails.io.js file for Angular usage.
 
 	/**
 	 * sails.io.js
@@ -140,6 +140,7 @@
 				return this.request(url, data, cb, 'delete');
 			},
 
+			// point to the request function
 			request: request
 		};
 	});

@@ -1,4 +1,4 @@
-# Sails.js_ChatApp_v0.9.0
+# Sails.js_ChatApp_v0.9.3
 ### a Sails application
 
 This app is based on the "Working with data in Sails.js" tutorial by Gabriel Manricks on net.tutsplus.com. The code base has been updated to use the latest version of Sails.js v0.9.3, and comments have been added where the code differs from the original tutorial.

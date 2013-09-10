@@ -6,7 +6,7 @@
       if (message){
         return true;
       } else {
-        errorHandler.setError("A username and password is required");
+        errorHandler.setError("Please enter a message.");
       }
     };
   });
